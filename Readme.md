@@ -139,7 +139,7 @@ The initial Citizen behaviours, at the start,  choose acros all possible actions
 
 However the emergent behaviour after about twenty minutes of (Fast) Runtime simulation is that the typical Citizen Action sequence being a preference towards a Sequence of Going to Work (Out of necessity for some funding Money) => Going to Restaurant or Park to increase Happiness and going Home to Rest.  The Citizens seem less inclined to go Food shoping and Eating at Home. I guess because they can meet their Hunger and Happiness needs better by Going Out to Eat. The Citizens rarely went to the Pub, which although high on Hapiness but does not meet their hunger needs as well as the going to Restaurant.    
 
-## Acknowldgements ##
+## Acknowledgements ##
 
 -   Barto and Sutton: Renforcment Learning: An Introduction
 -   Morales: Grokking Deep Reinforcement Laerning:  
