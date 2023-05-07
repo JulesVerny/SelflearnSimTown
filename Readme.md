@@ -8,9 +8,9 @@ This is inspired by the awareness and frustrations in getting Q learning and pol
 
 The results suggest some basic learn't behaviours.  From anm Initial negative reward, the Citizens learn to optimise their behaviours to a convincing Postive Average Reward. 
 
-![ScreenShot](OverviewPic.PNG)
+![ScreenShot](OverviewPic2.PNG)
 
-See a You Tube Video Here << >>
+[See a You Tube Overview Video Here](https://www.youtube.com/watch?v=AOyDjJAvVUA)
 
 ## Implementaiton Details ##
 
