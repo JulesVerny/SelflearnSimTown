@@ -1,12 +1,12 @@
 # Citizens Learn to Live in Simple Town: Rudimentary Self Learning  #
 
-A simple Town Simulation with Citizens behaviour dictated by a Rudimentary Self learning Algorithm. The Citizens behavioural actions are dictated by their current feelings and levels of money and food.  The intended operaiton is for the Self Learning Algorithm to develop a useful representation of which is the next 'Best' Action to take, given the Citezens current feelings. 
+A simple Town Simulation where the Citizens behaviours are dictated by a Rudimentary Self learning Algorithm. The Citizens behavioural Actions are dictated by their current feelings and levels of money and food held.  The intended operation is for the Self Learning Algorithm to develop a useful representation of which is the next 'Best' Action to take, given the Citizens current feelings. 
 
 The project is implemented in the Unity game engine, with the self learning algorithm implemented within the C# scripts. 
 
-This is inspired by the awareness and frustrations in getting Q learning and ploicy based Reinforcement learning algoirhtms to learn and optimsie behaviour. Here instead a very rudimentary self learning algorithm is set up through a single layer nueral weights multiplication, softmax activation feeding a probability distribution. From which is drawn a probabilistic next Action choice. 
+This is inspired by the awareness and frustrations in getting Q learning and policy based Reinforcement learning algorithms to learn and optimise behaviours and performance. Here instead a very rudimentary self learning algorithm is set up as single layer nueral network, which holds a weight matrix which is used to multiply through the Current Citizens feelings Vector, and then via softmax activation which feeds into a probability distribution of possible Actions. The Next suggested Action is then drawn as probabilistic choice from this configured distribution. 
 
-The results suggest some basic learn't behaviours. 
+The results suggest some basic learn't behaviours.  From anm Initial negative reward, the Citizens learn to optimise their behaviours to a convincing Postive Average Reward. 
 
 ![ScreenShot](OverviewPic.PNG)
 
@@ -106,6 +106,8 @@ Note the algorithm performance and Citizens subsequence behaviours will ebvery s
 
 The Reward is passed into the Self learning Updates, Along with the Previous Action and the Consequential Citizens Feelings, as a classic (State,Action, Reward) sequence into Reinforcment Learning Algorithms. (Barto and Sutton)
 
+The Displayed Reward is 100 x a Moving Average of the current -1.0 to +1.0 Reward.  So a 'good' result would be a displayed reward consistently above +25, ideally above +50. 
+
 ### Self Learning Update : ReinforceActionWeights()  ###
 
 The Self learning algorithm follows the classic RL algorithm step updates, by processing through the tuple of (Last Action Applied, The Citizens Feelings, as a proxy of State, and the Reward). This is implemented within the ReinforceActionWeights() mehtod of BrainManager.CS.
@@ -137,10 +139,12 @@ The results are quite interesting but are not claimed to be either optimal or co
 
 The initial Citizen behaviours, at the start,  choose acros all possible actions in a fairly random manner. So generally running out of money, poor average hapiness etc. So in the beginning they visit across all buildings, with actions being  equally likely. (Including Visits to the Pub)
 
-However the emergent behaviour after about twenty minutes of (Fast) Runtime simulation is that the typical Citizen Action sequence being a preference towards a Sequence of Going to Work (Out of necessity for some funding Money) => Going to Restaurant or Park to increase Happiness and going Home to Rest.  The Citizens seem less inclined to go Food shoping and Eating at Home. I guess because they can meet their Hunger and Happiness needs better by Going Out to Eat. The Citizens rarely went to the Pub, which although high on Hapiness but does not meet their hunger needs as well as the going to Restaurant.    
+However the emergent behaviour after about twenty minutes of (Fast) Runtime simulation is that the typical Citizen Action sequence being a preference towards a Sequence of Going to Work (Out of necessity for some funding Money) => Going to Restaurant or Park to increase Happiness and going Home to Rest.  This sequence results in an Average displyd reward of above +50.   The Citizens seem less inclined to go Food shoping and Eating at Home. I guess because they can meet their Hunger and Happiness needs better by Going Out to Eat. The Citizens rarely went to the Pub, which although high on Hapiness but does not meet their hunger needs as well as the going to Restaurant.  
+
+Sometimes the Algorithm  settle into a sub optimal solution, of simply going to Park (To increase Hapiness and Redue Tiredness), Going To office and Going to Resturant Sequence, and avoiding going Home to rest altogether. This results in a Sub optimial +35 average displaed reward  
 
 ## Acknowledgements ##
 
 -   Barto and Sutton: Renforcment Learning: An Introduction
--   Morales: Grokking Deep Reinforcement Laerning:  
+-   Morales: Grokking Deep Reinforcement Learning  
 
