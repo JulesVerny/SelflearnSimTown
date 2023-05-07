@@ -12,7 +12,7 @@ The results suggest some basic learn't behaviours.  From anm Initial negative re
 
 [See a You Tube Overview Video Here](https://www.youtube.com/watch?v=AOyDjJAvVUA)
 
-## Implementaiton Details ##
+## Implementation Details ##
 
 The basic scene is set up in Unity, with various characters and buildings modelled in Blender and .FBX exported and imported into Unity. The Character animations are downloaded from Mixamo. You can download the Unity Scene and Assets from teh package provided above. 
 
